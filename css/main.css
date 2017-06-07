@@ -3,11 +3,12 @@ html, .header, .footer {
 }
 
 .header, .footer {
-    height: 100px;
+    height: 40px;
 }
 
 .logo_elem, .navbar {
     float: left;
+    height: 100%;
 }
 
 .logo_elem {
@@ -19,25 +20,22 @@ html, .header, .footer {
 }
 
 .logo {
-    border: 1px solid black;
-    width: 98px;
-    height: 98px;
+    width: 100%;
+    height: 100%;
 }
 
 .menu {
     float: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-
-.menu_elem {
-    font-size: 16px;
-    text-decoration: none;
-    padding: 10px 5px;
-    margin: 10px 5px;
-    min-width: 50px;
+.menu li {
+    float: left;
 }
-
-.menu_elem:hover {
-    color: white;
+.menu li a {
+    display: block;
+    padding: 14px 16px;
 }
 
 .content {
@@ -91,7 +89,7 @@ html, .header, .footer {
     }
 }
 
-.menu_elem:hover {
+.menu li:hover {
     animation-name: animacija;
     animation-duration: 1s;
 }
