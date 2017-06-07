@@ -31,24 +31,99 @@ html, .header, .footer {
 .menu_elem {
     font-size: 16px;
     text-decoration: none;
+    padding: 10px 5px;
+    margin: 10px 5px;
+    min-width: 50px;
+}
+
+.menu_elem:hover {
+    color: white;
 }
 
 .content {
     background-color: #71cdff;
-    min-height: 500px;
+    min-height: 340px;
 }
+
 .ksonas, .dsonas {
     float: left;
 }
+
 .ksonas {
-    width: 20%;
+    width: 18%;
     height: 300px;
 }
+
 .dsonas {
-    width: 80%;
+    width: 78%;
 }
+
 .vieta_jums {
     width: 100%;
     height: 150px;
-    background-color: darkgrey;
+    background-color: lightgray;
+    margin-bottom: 10px;
+    border: 1px solid dimgray;
+}
+.vieta_jums img {
+    width: 100%;
+    height: 100%;
+}
+.vieta_jums span{
+    font-size: 36px;
+    text-align: center;
+    display: block;
+    height: 150px;
+    line-height: 150px;
+    overflow: hidden;
+}
+
+@keyframes animacija {
+    0% {
+        background-color: #1e90ff
+    }
+    50% {
+        background-color: #ff1224
+    }
+
+    100% {
+        background-color: #1e90ff
+    }
+}
+
+.menu_elem:hover {
+    animation-name: animacija;
+    animation-duration: 1s;
+}
+.img_thumbnail {
+    background-color: white;
+    border: 1px solid black;
+    padding: 3px;
+    margin: 0 10px;
+}
+
+.flimg {
+    float: left;
+    margin-left: 0;
+}
+.frimg {
+    float: right;
+    margin-right: 0;
+}
+
+.fl {float: left}
+.fr {float: right}
+
+.content h1 {
+    font-size: 28px;
+    font-family: Verdana;
+    padding-bottom: 5px;
+    border-bottom:  2px solid gray;
+    margin: 0 10px;
+}
+.content p {
+    margin: 5px 0;
+}
+.dsonas, .ksonas {
+    padding: 1%;
 }
