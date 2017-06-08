@@ -125,3 +125,21 @@ html, .header, .footer {
 .dsonas, .ksonas {
     padding: 1%;
 }
+
+.footer {
+    height: 80px;
+}
+.footer div {
+    float: left;
+}
+.footer div:first-child {
+    width: 80%;
+}
+.footer div:last-child {
+    width: 20%;
+    text-align: center;
+    height: inherit;
+}
+.footer div:last-child img {
+    height: inherit;
+}
