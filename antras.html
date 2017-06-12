@@ -81,9 +81,16 @@
         </div>
         <p>
 
-
-        <div id="demo">hhhhhhhhhhhhhh</div>
-        <input type="button" class="btn btn-default" onclick="sleptiRodyti()"/>
+        <div class="col-md-6 col-xs-12">
+            <div id="demo">hhhhhhhhhhhhhh</div>
+            <input type="button" class="btn btn-default" onclick="sleptiRodyti()"/>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <img src="img/galery/thumbnails/logo.png" alt="test" class="paveikslas"  />
+            <input type="button" value="Toggle" class="btn btn-primary" id="mygtukas"/>
+            <input type="button" value="Slėpti" class="btn btn-primary" id="slepti"/>
+            <input type="button" value="Rodyti" class="btn btn-primary" id="rodyti"/>
+        </div>
 
 
         <a href="http://google.lt" id="nuoroda">google</a>
@@ -104,13 +111,13 @@
         <div class="col-md-6 col-xs-12">
             <div class="tabai">
                 <ul class="nav nav-tabs">
-                    <li role="presentation" class="" data-lapas="sheet1" onclick="keisti(this)">
+                    <li role="presentation" class="tabas" data-lapas="sheet1" onclick="keisti(this)">
                         <a>1 puslapis</a>
                     </li>
-                    <li role="presentation" class="active" data-lapas="sheet2" onclick="keisti(this)">
+                    <li role="presentation" class="tabas" data-lapas="sheet2" onclick="keisti(this)">
                         <a>2 puslapis</a>
                     </li>
-                    <li role="presentation" class="" data-lapas="sheet3" onclick="keisti(this)">
+                    <li role="presentation" class="tabas active" data-lapas="sheet3" onclick="keisti(this)">
                         <a>3 puslapis</a>
                     </li>
                 </ul>
@@ -141,6 +148,9 @@
 </script>
 <script src="js/antras.js"></script>
 <script src="js/tabai.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/jqkodas.js"></script>
 
 </body>
 </html>

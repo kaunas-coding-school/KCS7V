@@ -1,7 +1,9 @@
 function keisti(elem) {
+    sleptiVisusTabus();
     sleptiVisusLapus();
     var sheet = elem.getAttribute('data-lapas');
     document.getElementById(sheet).style.display = "block";
+    elem.classList.add('active');
 }
 function sleptiVisusLapus () {
     var lapai = document.getElementsByClassName('sheet');
@@ -9,9 +11,9 @@ function sleptiVisusLapus () {
         lapai[i].style.display = 'none';
     }
 }
-
-
-
-
-document.getElementById("MyElement").classList.add('MyClass');
-document.getElementById("MyElement").classList.remove('MyClass');
+function sleptiVisusTabus () {
+    var tabai = document.getElementsByClassName('tabas');
+    for (var i = 0; i < tabai.length; i++) {
+        tabai[i].classList.remove('active');
+    }
+}
