@@ -3,11 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Pirmasis puslapis</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap.css">
-    <link rel="stylesheet" href="lib/bootstrap-3.3.7-dist/css/bootstrap-theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="css/antras.css">
+    <link rel="stylesheet" href="css/tabai.css">
 </head>
-<body>
+<body class="container">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="antras.html">
+                <img class="logo" src="img/galery/thumbnails/logo.png" alt="Logo"/>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="index.html">Pirmas</a>
+                </li>
+                <li>
+                    <a href="antras.html">Antras</a>
+                </li>
+                <li>
+                    <a href="trecias.html">Treacias</a>
+                </li>
+                <li>
+                    <a href="ketvirtas.html">Ketvirtas</a>
+                </li>
+                <li>
+                    <a href="penktas.html">Penktas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--
 <div class="row">
     <div class="col-md-2">
         <img class="logo" src="img/galery/thumbnails/logo.png" alt="Logo"/>
@@ -32,23 +66,61 @@
         </ul>
     </div>
 </div>
+-->
+
 <div class="row">
     <div class="col-md-2">
         <div class="col-md-12"><img src="img/galery/thumbnails/logo.png" alt="Logo"/></div>
         <div class="col-md-12"><span>REKLAMA</span></div>
     </div>
     <div class="col-md-10">
-        <h1>Antras puslapis</h1>
+        <div class="page-header">
+            <h1>Antras
+                <small>puslapis</small>
+            </h1>
+        </div>
         <p>
-            Quisque tristique lorem sem, at vestibulum sem eleifend vitae. Suspendisse potenti. Etiam porttitor mi et facilisis egestas. Nullam id ipsum vel augue placerat accumsan ut tempus libero. Sed a elementum nisi, nec eleifend orci. Aliquam commodo odio sit amet felis rhoncus viverra. Integer sodales massa rutrum, pellentesque neque vel, suscipit ex.
+
+
+        <div id="demo">hhhhhhhhhhhhhh</div>
+        <input type="button" class="btn btn-default" onclick="sleptiRodyti()"/>
+
+
+        <a href="http://google.lt" id="nuoroda">google</a>
+        Quisque tristique lorem sem, at vestibulum sem eleifend vitae. Suspendisse potenti. Etiam porttitor mi et
+        facilisis egestas. Nullam id ipsum vel augue placerat accumsan ut tempus libero. Sed a elementum nisi, nec
+        eleifend orci. Aliquam commodo odio sit amet felis rhoncus viverra. Integer sodales massa rutrum,
+        pellentesque neque vel, suscipit ex.
         </p>
         <hr/>
-        <form action="submit.php" method="post">
-            <input name="vardas" type="text" placeholder="Jūsų vardas ?" /><br/>
-            <input name="pastas" type="email" placeholder="Jūsų el. pašto adresas ?" /><br/>
-            <textarea name="zinute" placeholder="Jūsų žinutė mums..."></textarea><br/>
-            <input type="submit" value="Siūsti" />
-        </form>
+        <div class="col-md-6 col-xs-12">
+            <form action="submit.php" method="post">
+                <input name="vardas" type="text" class="form-control" placeholder="Jūsų vardas ?"/><br/>
+                <input name="pastas" type="email" class="form-control" placeholder="Jūsų el. pašto adresas ?"/><br/>
+                <textarea name="zinute" class="form-control" placeholder="Jūsų žinutė mums..."></textarea><br/>
+                <input type="submit" class="btn-primary btn" value="Siūsti"/>
+            </form>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="tabai">
+                <ul class="nav nav-tabs">
+                    <li role="presentation" class="" data-lapas="sheet1" onclick="keisti(this)">
+                        <a>1 puslapis</a>
+                    </li>
+                    <li role="presentation" class="active" data-lapas="sheet2" onclick="keisti(this)">
+                        <a>2 puslapis</a>
+                    </li>
+                    <li role="presentation" class="" data-lapas="sheet3" onclick="keisti(this)">
+                        <a>3 puslapis</a>
+                    </li>
+                </ul>
+                <div class="panel panel-default">
+                    <div class="panel-body sheet" id="sheet1">1 lentele</div>
+                    <div class="panel-body sheet" id="sheet2">2 lentele</div>
+                    <div class="panel-body sheet" id="sheet3">3 lentele</div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <hr/>
@@ -60,5 +132,15 @@
         <img src="img/galery/thumbnails/logo.png" alt="Logo"/>
     </div>
 </div>
+
+
+<script>
+    document.getElementById("demo").innerHTML = "Hello Dolly.";
+    var url = document.getElementById('nuoroda').getAttribute('href');
+    console.log(url);
+</script>
+<script src="js/antras.js"></script>
+<script src="js/tabai.js"></script>
+
 </body>
 </html>
