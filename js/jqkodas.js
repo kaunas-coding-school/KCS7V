@@ -11,5 +11,6 @@ $(document).ready(function() {
         $('.paveikslas').show();
     });
 
+    $('#load').load('html_file.html');
 
 });

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/antras.css">
     <link rel="stylesheet" href="css/tabai.css">
 </head>
-<body class="container">
+<body class="container" ng-app="myApp" ng-cloak>
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
@@ -20,21 +20,9 @@
             </a>
         </div>
         <div class="collapse navbar-collapse navbar-right">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="index.html">Pirmas</a>
-                </li>
-                <li>
-                    <a href="antras.html">Antras</a>
-                </li>
-                <li>
-                    <a href="trecias.html">Treacias</a>
-                </li>
-                <li>
-                    <a href="ketvirtas.html">Ketvirtas</a>
-                </li>
-                <li>
-                    <a href="penktas.html">Penktas</a>
+            <ul class="nav navbar-nav" ng-controller="menuController">
+                <li ng-repeat="item in menuArray">
+                    <a href="{{item.url}}">{{item.title}}</a>
                 </li>
             </ul>
         </div>
@@ -70,8 +58,25 @@
 
 <div class="row">
     <div class="col-md-2">
-        <div class="col-md-12"><img src="img/galery/thumbnails/logo.png" alt="Logo"/></div>
-        <div class="col-md-12"><span>REKLAMA</span></div>
+        <div class="col-md-12">
+            <div class="page-header">
+                <h2>Sonine juosta</h2>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <img src="img/galery/thumbnails/logo.png" alt="Logo"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <span>REKLAMA</span>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="col-md-10">
         <div class="page-header">
@@ -79,26 +84,81 @@
                 <small>puslapis</small>
             </h1>
         </div>
-        <p>
+        <div>
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div id="demo">hhhhhhhhhhhhhh</div>
+                    <input type="button"
+                           class="btn btn-default"
+                           onclick="sleptiRodyti()"
+                           value="Slepti/Rodyti"
+                    />
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <img src="img/galery/thumbnails/logo.png" alt="test" class="paveikslas"/>
+                    <input type="button" value="Toggle" class="btn btn-primary" id="mygtukas"/>
+                    <input type="button" value="Slėpti" class="btn btn-primary" id="slepti"/>
+                    <input type="button" value="Rodyti" class="btn btn-primary" id="rodyti"/>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div ng-controller="manoController" class="col-xs-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" ng-click="busena=!busena">
+                            <span class="glyphicon"
+                                  ng-class="busena === true ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-top'"
+                                  aria-hidden="true">
+                            </span>
+                        </div>
+                        <div class="panel-body" ng-show="busena">
+                            <h1 ng-click="vardas='10gg'">{{5+5}}</h1>
+                            <label for="vardas">Vardas</label>
+                            <input type="text" ng-model="vardas" class="form-control" id="vardas">
 
-        <div class="col-md-6 col-xs-12">
-            <div id="demo">hhhhhhhhhhhhhh</div>
-            <input type="button" class="btn btn-default" onclick="sleptiRodyti()"/>
+                            <p ng-click="keistiVarda()">{{vardas}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6" ng-controller="ciklasController">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h3>Puslapiavimas:</h3>
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination">
+                                    <li>
+                                        <a href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li ng-repeat="reiksme in masyvas"><a href="#">{{reiksme}}</a></li>
+                                    <li>
+                                        <a href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <h3>Asmenys:</h3>
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="asmuo in masyvas2">{{asmuo.vardas}}
+                                    {{asmuo.pavarde}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>
+                Quisque tristique lorem sem, at vestibulum sem eleifend vitae. Suspendisse potenti. Etiam porttitor mi
+                et
+                facilisis egestas. Nullam id ipsum vel augue placerat accumsan ut tempus libero. Sed a elementum nisi,
+                nec
+                eleifend orci. Aliquam commodo odio sit amet felis rhoncus viverra. Integer sodales massa rutrum,
+                pellentesque neque vel, suscipit ex.
+            </p>
         </div>
-        <div class="col-md-6 col-xs-12">
-            <img src="img/galery/thumbnails/logo.png" alt="test" class="paveikslas"  />
-            <input type="button" value="Toggle" class="btn btn-primary" id="mygtukas"/>
-            <input type="button" value="Slėpti" class="btn btn-primary" id="slepti"/>
-            <input type="button" value="Rodyti" class="btn btn-primary" id="rodyti"/>
-        </div>
-
-
-        <a href="http://google.lt" id="nuoroda">google</a>
-        Quisque tristique lorem sem, at vestibulum sem eleifend vitae. Suspendisse potenti. Etiam porttitor mi et
-        facilisis egestas. Nullam id ipsum vel augue placerat accumsan ut tempus libero. Sed a elementum nisi, nec
-        eleifend orci. Aliquam commodo odio sit amet felis rhoncus viverra. Integer sodales massa rutrum,
-        pellentesque neque vel, suscipit ex.
-        </p>
         <hr/>
         <div class="col-md-6 col-xs-12">
             <form action="submit.php" method="post">
@@ -128,6 +188,7 @@
                 </div>
             </div>
         </div>
+        <div id="load"></div>
     </div>
 </div>
 <hr/>
@@ -136,7 +197,7 @@
         Visos teisės saugomos &copy; 2017
     </div>
     <div class="com-md-1">
-        <img src="img/galery/thumbnails/logo.png" alt="Logo"/>
+        <img src="img/galery/thumbnails/logo.png" alt="Logo" class="logo"/>
     </div>
 </div>
 
@@ -151,6 +212,12 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/jqkodas.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/angular/aplikacija.js"></script>
+<script src="js/angular/controlleriai/manoController.js"></script>
+<script src="js/angular/controlleriai/ciklasController.js"></script>
+<script src="js/angular/controlleriai/menuController.js"></script>
 
 </body>
 </html>
