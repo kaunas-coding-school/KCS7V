@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+    $('#opmygtukas').click(function(){
+        console.log('Veikia');
+        $( '#opa' ).fadeToggle(3000);
+    });
+
     $('#mygtukas').click(function () {
         $('.paveikslas').toggle();
     });
